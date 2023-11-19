@@ -16,7 +16,7 @@ return new class extends Migration
             $table->float('paid_amount');
             $table->string('currency');
             $table->unsignedBigInteger('user_id');
-            $table->integer('status_code');
+            $table->enum('status_code',['authorized', 'decline', 'refunded']);
             $table->date('payment_date');
             $table->string('parent_identification')->unique();
             $table->timestamps();

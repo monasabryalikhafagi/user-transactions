@@ -14,7 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group(["namespace" => "Api"], function () {
+Route::group([], function () {
+
     Route::get('users', 'UserController@index');
+    Route::post('import', 'ImportController@import');
 
 });

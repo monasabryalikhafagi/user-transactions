@@ -111,7 +111,7 @@ class Repository implements RepositoryInterface
        $this->model->create($data);
        return $this->model;
     }
-
+ 
     public function update(array $data ,$id): ?Model
     {
         $model = $this->model->find($id);
