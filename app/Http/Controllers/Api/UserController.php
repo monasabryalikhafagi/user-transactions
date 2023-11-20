@@ -17,7 +17,7 @@ class UserController extends Controller
         $this->userService = $userService;
     }
 
-    public function index(UserRequest $request)
+    public function index(Request $request)
     {
         list($users,$count) = $this->userService->index($request);
         $users = UserResource::collection($users) ;
