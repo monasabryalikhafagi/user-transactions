@@ -1,0 +1,104 @@
+{
+	"info": {
+		"_postman_id": "ca644a8f-914d-4226-92b8-7802f616c10d",
+		"name": "Transections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24787684"
+	},
+	"item": [
+		{
+			"name": "import",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "entity",
+							"value": "transection",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/home/mona/Downloads/Assigiment/transactions.json"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{URL}}/import",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"import"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{URL}}/users?skip=0&take=10&status_code=authorized&currency",
+					"host": [
+						"{{URL}}"
+					],
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "take",
+							"value": "10"
+						},
+						{
+							"key": "status_code",
+							"value": "authorized"
+						},
+						{
+							"key": "currency",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "URL",
+			"value": "http://users-transections.test/api",
+			"type": "string"
+		}
+	]
+}
