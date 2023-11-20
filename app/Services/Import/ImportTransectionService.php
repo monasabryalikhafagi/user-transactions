@@ -11,7 +11,8 @@ class ImportTransectionService implements ImportInterface
     public function import($file)
     {
       $path = Storage::putFile('imports',$file );
- 
       ImportTransection::dispatch($path);
+      
+      return  true;
     }
 }

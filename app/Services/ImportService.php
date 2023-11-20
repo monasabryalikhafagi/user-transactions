@@ -10,6 +10,6 @@ class ImportService
     public function import(ImportInterface $importer ,$file)
     {
 
-        $importer->import($file);
+       return $importer->import($file);
     }
 }

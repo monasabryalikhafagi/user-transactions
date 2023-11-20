@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Api\ImportRequest;
-use App\Services\ImportService;
 use App\Services\ImportFactory;
+use App\Services\ImportService;
+
 class ImportController extends Controller
 {
     private ImportService $importService;
@@ -17,11 +17,18 @@ class ImportController extends Controller
     }
     public function import(ImportRequest $request)
     {
-        $entity = $request->get('entity','user');
-        $file =  $request->file;//file_get_contents( $request->get('file'));
-        //dd($file, $entity);
+        $entity = $request->get('entity', 'user');
+        $file = $request->file;
         $importer = ImportFactory::instance($entity);
-       
-        $this->importService->import($importer,$file);
+        
+        try {
+            $this->importService->import($importer, $file);
+            return $this->dataResponse(null, trans('messages.success'), 200);
+
+        } catch (\Exception $e) {
+            return $this->errorResponse($e, null, 500);
+
+        }
+
     }
 }
