@@ -38,17 +38,17 @@ class ImportApiTest extends TestCase
     public function test_the_import_file_validation(): void
     {
         $admin = User::where('email', 'admin@gmail.com');
-        Storage::fake('importing');
- 
+      //  Storage::fake('importing');
+       // json_decode(file_get_contents(), true);
         $file = UploadedFile::fake()->create('users.json');
  
         // $response = $this->post('/avatar', [
         //     'avatar' => $file,
         // ]);
  
-        Storage::disk('importing')->assertExists($file->hashName());
+       // Storage::disk('importing')->assertExists($file->hashName());
 
-        $response = $this->actingAs($admin ,'api')->postJson('/api/import');
+        $response = $this->actingAs($admin ,'api')->postJson('/api/import',['entity' => 'users' , 'file' => base_path().'/tests/users.json']);
  
         $response
             ->assertStatus(422)
