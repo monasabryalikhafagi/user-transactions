@@ -13,8 +13,8 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
-Route::group([], function () {
+Route::post('login','AuthController@login');
+Route::group(['middleware' => 'auth:api'], function () {
 
     Route::get('users', 'UserController@index');
     Route::post('import', 'ImportController@import');
