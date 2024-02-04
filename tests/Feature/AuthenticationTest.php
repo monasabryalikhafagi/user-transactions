@@ -13,17 +13,12 @@ class AuthenticationTest extends TestCase
      */
     public function test_login_validation(): void
     {
-        $response = $this->postJson('/api/login')->assertStatus(422);
-            // ->assertJson([
-            //     'created' => true,
-            // ]);
+        $response = $this->postJson('/api/login');
+        
+        $response->assertStatus(422);
     }
     public function test_login_correct_user(): void
     {   
-        $response = $this->postJson('/api/login', [])->assertStatus(422);
-
-
-
-        // $response->assertStatus(200);
+        $response = $this->postJson('/api/login', ["email" => "admin@gmail.com" , "password" => "1234566789"])->assertStatus(401);
     }
 }
