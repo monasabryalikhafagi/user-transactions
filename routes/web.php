@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+use Mypackage\Greeting\Greet;
+
+Route::get('/greet/{name}', function ($name) {
+    $greet = new Greet();
+
+    return $greet->greet($name);
+});

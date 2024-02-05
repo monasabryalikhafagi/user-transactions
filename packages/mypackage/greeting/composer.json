@@ -1,0 +1,15 @@
+{
+    "name": "mypackage/greeting",
+    "autoload": {
+        "psr-4": {
+            "Mypackage\\Greeting\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "monasabry",
+            "email": "monasabrykhafagi2018@gmail.com"
+        }
+    ],
+    "require": {}
+}
