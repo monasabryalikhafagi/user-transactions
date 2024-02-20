@@ -21,7 +21,7 @@ class UsersApiTest extends TestCase
     }
     public function test_success_logined_user_to_view_users(): void
     {
-        $admin = User::where('email', 'admin@gmail.com');
+        $admin = User::where('email', 'admin@gmail.com')->first();
 
         $response = $this->actingAs($admin ,'api')->getJson('/api/users');
  
