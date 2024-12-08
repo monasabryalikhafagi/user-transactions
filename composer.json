@@ -11,7 +11,9 @@
         "laravel/passport": "^11.10",
         "laravel/sanctum": "^3.3",
         "laravel/telescope": "^4.17",
-        "laravel/tinker": "^2.8"
+        "laravel/tinker": "^2.8",
+        "laravel/vapor-cli": "^1.65",
+        "laravel/vapor-core": "^2.37"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
