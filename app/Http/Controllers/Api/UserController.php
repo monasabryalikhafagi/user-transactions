@@ -22,7 +22,8 @@ class UserController extends Controller
         list($users,$count) = $this->userService->index($request);
         $users = UserResource::collection($users) ;
   
-          return response()->json([
+          return  
+          response()->json([
               'data' => $users,
               'count' => $count,
               'status' => true,
