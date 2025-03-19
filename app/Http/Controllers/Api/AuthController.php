@@ -20,7 +20,7 @@ class AuthController extends Controller
     public function login(LoginRequest $request)
     {
         list($logined,$user) = $this->authService->login($request->all());
-        
+        // tests  comimt
         if(!$logined)
         {
              return $this->errorResponse("user name or password is rong",null,401);
